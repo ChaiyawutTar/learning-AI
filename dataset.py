@@ -6,6 +6,9 @@ from PIL import Image
 import torch
 from torch.utils.data import Dataset
 
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
+
 class CatDogMiniDataset(Dataset):
     def __init__(self, image_dir, transform=None):
         self.image_dir = image_dir
@@ -39,9 +42,6 @@ if __name__ == "__main__":
 
     img, target_label = dataset[0]
     print("img.shape without transform", img.shape)
-
-    import albumentations as A
-    from albumentations.pytorch import ToTensorV2
 
     train_transform = A.Compose([
         A.Resize(height=32, width=32),
