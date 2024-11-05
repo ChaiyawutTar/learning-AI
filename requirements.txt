@@ -1,0 +1,7 @@
+numpy==1.24.1
+pandas==2.2.0
+Pillow
+torch
+albumentations
+torchvision
+pyarrow
